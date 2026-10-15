@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-handwriting: 'Dancing Script', cursive;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  
+  --bg-deep: #080307;
+  --bg-burgundy: #180512;
+  --rose-glow: #f43f5e;
+  --gold-glow: #fbbf24;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: #fff;
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Custom typography utilities */
+.font-serif-romantic {
+  font-family: var(--font-serif);
+}
+
+.font-handwriting-romantic {
+  font-family: var(--font-handwriting);
+}
+
+/* Dreamy Romantic Background Mesh */
+.romantic-bg {
+  background: radial-gradient(circle at 50% 20%, rgba(244, 63, 94, 0.15) 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 15% 85%, rgba(217, 70, 239, 0.12) 0%, transparent 50%),
+              linear-gradient(180deg, #070206 0%, #12030d 50%, #070206 100%);
+}
+
+/* Glassmorphism Romantic Cards */
+.romantic-glass {
+  background: rgba(24, 7, 20, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(251, 113, 133, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 0 12px rgba(244, 63, 94, 0.05);
+}
+
+.romantic-glass-gold {
+  background: rgba(25, 12, 10, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 0 14px rgba(251, 191, 36, 0.06);
+}
+
+/* Glowing text and buttons */
+.glow-text-rose {
+  text-shadow: 0 0 20px rgba(244, 63, 94, 0.6), 0 0 40px rgba(244, 63, 94, 0.3);
+}
+
+.glow-text-gold {
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.6), 0 0 35px rgba(251, 191, 36, 0.25);
+}
+
+.glow-box-rose {
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.35), 0 0 50px rgba(244, 63, 94, 0.15);
+}
+
+.glow-box-gold {
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.35), 0 0 50px rgba(251, 191, 36, 0.15);
+}
+
+/* Candle flame animations */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 8px rgba(255, 179, 0, 0.9));
+  }
+  25% {
+    transform: scale(1.04, 0.96) rotate(-1.5deg);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(255, 150, 0, 0.95));
+  }
+  50% {
+    transform: scale(0.96, 1.05) rotate(1.5deg);
+    opacity: 0.9;
+    filter: drop-shadow(0 0 10px rgba(255, 200, 0, 0.85));
+  }
+  75% {
+    transform: scale(1.02, 0.98) rotate(-1deg);
+    opacity: 0.98;
+    filter: drop-shadow(0 0 14px rgba(255, 140, 0, 1));
+  }
+}
+
+.candle-flame {
+  animation: flameFlicker 1.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes candleSmoke {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0) scale(0.6);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateY(-20px) translateX(6px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px) translateX(-4px) scale(1.8);
+  }
+}
+
+.candle-smoke {
+  animation: candleSmoke 1.8s ease-out forwards;
+}
+
+/* Soft floating animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(244, 63, 94, 0.4), 0 0 40px rgba(244, 63, 94, 0.15);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 35px rgba(244, 63, 94, 0.7), 0 0 70px rgba(244, 63, 94, 0.35);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.8s ease-in-out infinite;
+}
+
+/* Light beam / Shimmer */
+@keyframes shimmerPass {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffc2d1 25%,
+    #fbbf24 50%,
+    #ffc2d1 75%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmerPass 4s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080307;
+}
+::-webkit-scrollbar-thumb {
+  background: #381226;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5b1d3d;
+}
